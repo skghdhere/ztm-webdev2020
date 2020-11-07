@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES5 and ES6</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <h1 class="nav">Zero To Mastery: WebDev Course 2020</h1>
+    <h2 class="topic">6. ES5 and ES6</h2>
+    <h3>Learning more about these new syntaxes!</h3>
+    <div class="card">
+      <p class="heading">
+        let and const
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🌎 MDN Docs</a
+        >
+      </p>
+      <pre>
+const player = "bobby";
+let experience = 100;
+let wizardLevel = false;
+            
+if (experience > 90) {
+    let wizardLevel = true; //with var it will change at global scope
+    console.log("inside", wizardLevel);
+}
+console.log("outside", wizardLevel);
+            </pre
+      >
+    </div>
+    <div class="card">
+      <p class="heading">
+        Destructuring
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🌎 MDN Docs</a
+        >
+      </p>
+      <pre>
+const obj = {
+userName: "bobby",
+age: 100,
+isMarried: false,
+};
+// Instead of doing this
+const userName = obj.userName;
+const age = obj.age;
+let isMarried = obj.isMarried;
+
+// We can do this
+const { userName, age } = obj;
+let { isMarried } = obj;
+//Here we grabbed player and experience from obj and stored them as const
+        </pre
+      >
+    </div>
+
+    <div class="card">
+      <p class="heading">
+        Computed Property Names (ES6)
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🌎 MDN Docs</a
+        >
+      </p>
+      <pre>
+const var1 = "name";
+//very useful if we need to calculate property values
+const user = {
+  [var1]: "Sangram",
+  [2 * 3]: "Lucky",
+};
+
+// Adding properties to objects
+// Instead of doing this
+const naam = "Simon";
+const married = true;
+const job = {};
+
+const someObj = {
+  naam: naam,
+  married: married,
+  job: job,
+};
+// When property name and variable assigned to
+that property is same then we can use the below syntax
+
+const anotherObj = { naam, married, job };
+
+</pre
+      >
+    </div>
+    <div class="card">
+      <p class="heading">
+        Template Strings
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🌎 MDN Docs</a
+        >
+      </p>
+      <pre>
+const greeting = `Hello my name is ${naam}`;
+          
+      </pre>
+    </div>
+    <div class="card">
+      <p class="heading">
+        Default Parameters
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🌎 MDN Docs</a
+        >
+      </p>
+      <pre>
+function greet(name = "", age = 30, pet = "cat") {
+        return `Hello ${name} you seem to be ${age - 10}. What a lovely ${pet}`;
+      }
+      </pre>
+    </div>
+
+    <div class="card">
+      <p class="heading">
+        Symbols (ES6)
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🌎 MDN Docs</a
+        >
+      </p>
+      <pre>
+Every symbol value returned from Symbol() is unique.
+A symbol value may be used as an identifier for object properties;
+this is the data type's primary purpose
+
+let sym1 = Symbol()
+let sym2 = Symbol('foo')
+let sym3 = Symbol('foo')
+
+Symbol('foo') === Symbol('foo')  // false
+sym2 === sym2 // false
+
+</pre
+      >
+    </div>
+    <div class="card">
+      <p class="heading">
+        Arrow Functions
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions"
+          target="_blank"
+        >
+          🌎 MDN Docs</a
+        >
+      </p>
+      <pre>
+// Traditional Function
+function bob (a){
+    return a + 100;
+}
+
+// Arrow Function
+let bob = a => a + 100;
+
+</pre
+      >
+    </div>
+    <script src="js/es5_es6.js"></script>
+  </body>
+</html>

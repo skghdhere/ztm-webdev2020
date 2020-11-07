@@ -1,0 +1,59 @@
+/* Selector {
+    Property: value;
+} */
+
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+body {
+  background-image: url(./assets/bg-image.jpg);
+  background-size: cover;
+}
+h2,
+p {
+  color: red;
+  text-align: center;
+  border: 5px solid rgba(165, 42, 42, 0.4);
+  cursor: pointer;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: coral;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px 2px;
+}
+nav {
+  text-align: end;
+}
+a {
+  color: aliceblue;
+  font-family: Lato;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: rgba(0, 255, 0, 0.3);
+  padding: 5px 10px;
+}
+a:hover {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.webtext {
+  border: 3px dashed red;
+}
+
+.active {
+  color: white;
+}
+
+#div1:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+#div2:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}

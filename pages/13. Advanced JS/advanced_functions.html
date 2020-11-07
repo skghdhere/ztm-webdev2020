@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Functions</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <h1 class="nav">Zero To Mastery: WebDev Course 2020</h1>
+    <h2 class="topic">7. Advanced Functions</h2>
+    <h3>Learning more about Advanced Functions!</h3>
+    <div class="card">
+      <p class="heading">
+        Closures
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures"
+          target="_blank"
+          rel="noopener noreferrer"
+          >🌎 MDN Docs</a
+        >
+      </p>
+      <pre>
+a closure gives you access 
+to an outer function’s scope from an inner function.
+<hr>
+const first = () => {
+  const greet = "hi";
+  const second = () => {
+    alert(greet);
+  };
+  return second;
+};
+
+const newFunc = first();
+newFunc();
+
+//alerts 'hi'
+      </pre>
+    </div>
+
+    <div class="card">
+      <p class="heading">
+        Currying<a
+          href="https://javascript.info/currying-partials"
+          target="_blank"
+        >
+          🌎 Learn More</a
+        >
+      </p>
+      <pre>
+Currying is a transformation of functions that 
+translates a function from callable as f(a, b, c)
+into callable as f(a)(b)(c).
+<hr>
+const multiply = (a,b) => a*b;
+const curriedMultiply = (a) => (b) => a*b;
+
+curriedMultiply(3)    // returns  (b) => a*b
+curriedMultiply(3)(4) // returns 12
+
+This makes it more extensible
+
+const multiplyBy5 = curriedMultiply(5)
+multiplyBy5(9) // return 45
+
+      </pre>
+    </div>
+    <div class="card">
+      <p class="heading">
+        Compose
+        <a
+          href="https://levelup.gitconnected.com/functional-programming-for-javascript-developers-compose-508d71b4e7b8"
+          target="_blank"
+          >gitconnected</a
+        >|
+        <a
+          href="https://jsmanifest.com/composing-in-javascript/"
+          target="_blank"
+          >jsmanifest</a
+        >|
+        <a
+          href="https://medium.com/@dtipson/creating-an-es6ish-compose-in-javascript-ac580b95104a"
+          target="_blank"
+          >medium</a
+        >
+      </p>
+      <pre>
+It is the act of putting two functions together
+to form a third function where the output of one 
+function is the input of the other.
+<hr>
+const compose = (f,g) => (a) => f(g(a));
+const sum = (num) => num + 1;
+compose(sum,sum)(5);  // returns 7
+
+</pre>
+    </div>
+  </body>
+</html>
