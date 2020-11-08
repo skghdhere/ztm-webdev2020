@@ -21,6 +21,7 @@ body {
   margin: 0;
   padding: 10px;
   font-family: "Ostrich Sans", "Roboto Mono";
+  font-size: 3.5em;
 }
 
 .topic {
@@ -31,10 +32,18 @@ body {
   text-align: center;
   text-transform: capitalize;
 }
+.head {
+  display: flex;
+  place-content: center;
+  /* The place-content CSS shorthand property allows you to
+   align content along both the block and inline directions
+    at once (i.e. the align-content and justify-content properties)
+    in a relevant layout system such as Grid or Flexbox. */
+}
 h3 {
-  margin: 10px auto;
+  margin: 10px 20px;
   border-bottom: 1px solid #f3f3f3;
-  width: fit-content;
+  width: max-content;
 }
 .card {
   height: max-content;
