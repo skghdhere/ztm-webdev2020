@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ES5 and ES6</title>
     <link rel="stylesheet" href="../../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/monokai.min.css"
+    />
   </head>
   <body>
     <h1 class="nav">Zero To Mastery: WebDev Course 2020</h1>
@@ -21,7 +25,7 @@
           🌎 MDN Docs</a
         >
       </p>
-      <pre>
+      <pre><code class="javascript">
 const player = "bobby";
 let experience = 100;
 let wizardLevel = false;
@@ -31,8 +35,8 @@ if (experience > 90) {
     console.log("inside", wizardLevel);
 }
 console.log("outside", wizardLevel);
-            </pre
-      >
+</code>
+            </pre>
     </div>
     <div class="card">
       <p class="heading">
@@ -45,7 +49,7 @@ console.log("outside", wizardLevel);
           🌎 MDN Docs</a
         >
       </p>
-      <pre>
+      <pre><code class="javascript">
 const obj = {
 userName: "bobby",
 age: 100,
@@ -60,8 +64,8 @@ let isMarried = obj.isMarried;
 const { userName, age } = obj;
 let { isMarried } = obj;
 //Here we grabbed player and experience from obj and stored them as const
-        </pre
-      >
+</code>
+        </pre>
     </div>
 
     <div class="card">
@@ -75,7 +79,7 @@ let { isMarried } = obj;
           🌎 MDN Docs</a
         >
       </p>
-      <pre>
+      <pre><code class="javascript">
 const var1 = "name";
 //very useful if we need to calculate property values
 const user = {
@@ -98,9 +102,8 @@ const someObj = {
 that property is same then we can use the below syntax
 
 const anotherObj = { naam, married, job };
-
-</pre
-      >
+</code>
+</pre>
     </div>
     <div class="card">
       <p class="heading">
@@ -113,9 +116,9 @@ const anotherObj = { naam, married, job };
           🌎 MDN Docs</a
         >
       </p>
-      <pre>
+      <pre><code class="javascript">
 const greeting = `Hello my name is ${naam}`;
-          
+</code> 
       </pre>
     </div>
     <div class="card">
@@ -129,10 +132,11 @@ const greeting = `Hello my name is ${naam}`;
           🌎 MDN Docs</a
         >
       </p>
-      <pre>
+      <pre><code class="javascript">
 function greet(name = "", age = 30, pet = "cat") {
         return `Hello ${name} you seem to be ${age - 10}. What a lovely ${pet}`;
       }
+    </code>
       </pre>
     </div>
 
@@ -147,7 +151,7 @@ function greet(name = "", age = 30, pet = "cat") {
           🌎 MDN Docs</a
         >
       </p>
-      <pre>
+      <pre><code class="javascript">
 Every symbol value returned from Symbol() is unique.
 A symbol value may be used as an identifier for object properties;
 this is the data type's primary purpose
@@ -158,9 +162,8 @@ let sym3 = Symbol('foo')
 
 Symbol('foo') === Symbol('foo')  // false
 sym2 === sym2 // false
-
-</pre
-      >
+</code>
+</pre>
     </div>
     <div class="card">
       <p class="heading">
@@ -172,7 +175,7 @@ sym2 === sym2 // false
           🌎 MDN Docs</a
         >
       </p>
-      <pre>
+      <pre><code class="javascript">
 // Traditional Function
 function bob (a){
     return a + 100;
@@ -180,10 +183,13 @@ function bob (a){
 
 // Arrow Function
 let bob = a => a + 100;
-
-</pre
-      >
+</code>
+</pre>
     </div>
     <script src="js/es5_es6.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
   </body>
 </html>

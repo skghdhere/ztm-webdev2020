@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Advanced Objects</title>
     <link rel="stylesheet" href="../../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/monokai.min.css"
+    />
   </head>
   <body>
     <h1 class="nav">Zero To Mastery: WebDev Course 2020</h1>
@@ -21,7 +25,7 @@
 The forEach() method executes a 
 provided function once for each 
 array element.
-<hr>
+<hr><code class="javascript">
 const array1 = ['a', 'b', 'c'];
 
 array1.forEach(element => console.log(element));
@@ -29,8 +33,12 @@ array1.forEach(element => console.log(element));
 // expected output: "a"
 // expected output: "b"
 // expected output: "c"
-
+</code>
 </pre>
     </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
   </body>
 </html>

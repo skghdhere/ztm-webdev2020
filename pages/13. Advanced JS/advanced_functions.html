@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Advanced Functions</title>
     <link rel="stylesheet" href="../../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/monokai.min.css"
+    />
   </head>
   <body>
     <h1 class="nav">Zero To Mastery: WebDev Course 2020</h1>
@@ -23,7 +27,7 @@
       <pre>
 a closure gives you access 
 to an outer function’s scope from an inner function.
-<hr>
+<hr><code class="javascript">
 const first = () => {
   const greet = "hi";
   const second = () => {
@@ -36,6 +40,7 @@ const newFunc = first();
 newFunc();
 
 //alerts 'hi'
+</code>
       </pre>
     </div>
 
@@ -48,7 +53,7 @@ newFunc();
           🌎 Learn More</a
         >
       </p>
-      <pre>
+      <pre><code class="javascript">
 Currying is a transformation of functions that 
 translates a function from callable as f(a, b, c)
 into callable as f(a)(b)(c).
@@ -63,12 +68,12 @@ This makes it more extensible
 
 const multiplyBy5 = curriedMultiply(5)
 multiplyBy5(9) // return 45
-
+</code>
       </pre>
     </div>
     <div class="card">
       <p class="heading">
-        Compose
+        Compose 🌎
         <a
           href="https://levelup.gitconnected.com/functional-programming-for-javascript-developers-compose-508d71b4e7b8"
           target="_blank"
@@ -89,12 +94,16 @@ multiplyBy5(9) // return 45
 It is the act of putting two functions together
 to form a third function where the output of one 
 function is the input of the other.
-<hr>
+<hr><code class="javascript">
 const compose = (f,g) => (a) => f(g(a));
 const sum = (num) => num + 1;
 compose(sum,sum)(5);  // returns 7
-
+</code>
 </pre>
     </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
   </body>
 </html>
