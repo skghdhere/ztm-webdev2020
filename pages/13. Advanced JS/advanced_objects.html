@@ -13,29 +13,122 @@
   <body>
     <h1 class="nav">Zero To Mastery: WebDev Course 2020</h1>
     <h2 class="topic">11. Advanced Objects</h2>
-    <h3>Reference Type</h3>
+    <div class="head">
+      <h3>Reference Type | this | Classes</h3>
+    </div>
     <div class="card">
       <p class="heading">
-        1.forEach() |<a
-          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"
-          >🌎 MDN Docs</a
+        Reference Types |<a
+          href="https://itnext.io/javascript-interview-prep-primitive-vs-reference-types-62eef165bec8"
+          >🌎 itnext.io</a
+        >|<a
+          href="https://academind.com/learn/javascript/reference-vs-primitive-values/"
+          >Academind</a
         >
       </p>
       <pre>
-The forEach() method executes a 
-provided function once for each 
-array element.
+Everything that is not a primitive data type in JS 
+is a reference data type.
 <hr><code class="javascript">
-const array1 = ['a', 'b', 'c'];
+// Primitive Types (6) - undefined, Number, Boolean, String , BigInt , Symbol
 
-array1.forEach(element => console.log(element));
+// Objects and Arrays are reference Types
+var person = {
+  name: 'Max',
+  age: 28,
+}
 
-// expected output: "a"
-// expected output: "b"
-// expected output: "c"
+var hobbies = ['Sports', 'Cooking']
+
+// key difference lies in how these are stores. (Memory Management)
 </code>
 </pre>
     </div>
+    <div class="card">
+      <p class="heading">
+        Context vs. Scope|<a
+          href="http://ryanmorr.com/understanding-scope-and-context-in-javascript/#:~:text=Fundamentally%2C%20scope%20is%20function%2Dbased,owns%E2%80%9D%20the%20currently%20executing%20code."
+          >🌏 Read More</a
+        >
+      </p>
+      <pre>
+<strong>Scope</strong> basically means where a variable lives. It can be
+of two types <strong>Global</strong> or <strong>Local</strong> - within {}.
+
+Context is most often determined by how a function is invoked.
+When a function is called as a method of an object,
+'this' is set to the object the method is called on:<hr><code class="javascript">var obj = {
+    foo: function() {
+        return this;   
+    }
+};
+
+obj.foo() === obj; // true</code>
+  </pre>
+    </div>
+    <div class="card">
+      <p class="heading">
+        classes OOP|<a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes"
+          >🌏 MDN Docs</a
+        >
+      </p>
+      <pre>
+Classes are in fact "special functions", and just as you
+can define function expressions and function 
+declarations, the class syntax has two components:
+class expressions and class declarations.
+<hr><code class="javascript">
+  // Class declarations
+class Player {
+  constructor(name, type) {
+    this.name = name;
+    this.type = type;
+  }
+  // Introducer
+  introduce() {
+    console.log(`Hi I am ${this.name}, a ${this.type}.`);
+  }
+}
+class Wizard extends Player {
+  constructor(name, type){
+    super(name, type)
+    }
+    play() {
+      console.log(`Heyyy i', a ${this.type}`)
+    }
+}
+
+const wizard1 = new Wizard('Shelly', 'Healer');
+const wizard1 = new Wizard('Shawn', 'Dark Magician');
+
+
+
+//Class expressions
+
+// unnamed
+let Rectangle = class {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+console.log(Rectangle.name);
+// output: "Rectangle"
+
+// named
+let Rectangle = class Rectangle2 {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+console.log(Rectangle.name);
+// output: "Rectangle2"
+      </code>
+      </pre>
+    </div>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
     <script>
       hljs.initHighlightingOnLoad();

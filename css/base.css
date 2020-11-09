@@ -10,8 +10,11 @@
   padding: 10px;
   width: 150px;
   height: 200px;
-  background-color: #e94560;
+
+  background: linear-gradient(to right, #e94560, rgb(226, 14, 60));
+
   margin: 10px;
+
   border-radius: 5px;
   flex-direction: column;
 }
@@ -31,9 +34,10 @@
 }
 
 .topic-card:hover {
-  transform: rotate(-3deg) scale(1.1);
-  box-shadow: 5px 3px 8px #8145e9;
-  transition: all 0.3s ease;
+  transform: scale(1.1);
+  /* box-shadow: 5px #fff; */
+  box-shadow: 0 10px 28px rgba(226, 14, 60, 0.538), 0 10px 10px  rgb(0, 0, 0);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* @media only screen and (max-width: 600px) {
