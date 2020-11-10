@@ -29,6 +29,10 @@ body {
   padding: 10px;
   font-family: "Ostrich Sans", "Roboto Mono";
   font-size: 3.5em;
+  text-shadow: 0 10px 28px rgba(226, 14, 60, 0.538), 0 10px 10px  rgba(0, 0, 0, 0.765);
+}
+.nav:hover {
+  cursor: pointer;  
 }
 
 .topic {
