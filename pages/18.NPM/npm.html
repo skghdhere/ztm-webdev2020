@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NPM + NPM Scripts</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/monokai.min.css"
+    />
+  </head>
+  <body>
+    <h1 class="nav">Zero To Mastery: WebDev Course 2020</h1>
+    <h2 class="topic">18. NPM + NPM Scripts</h2>
+    <div class="head">
+      <h3>NPM: Node Package Manager</h3>
+      <blockquote>
+        NPM is a package manager for Node.js packages, or modules if you like.
+        <a href="http://www.npmjs.com" target="_blank" rel="noopener noreferrer"
+          >www.npmjs.com</a
+        >
+        hosts thousands of free packages to download and use. The NPM program is
+        installed on your computer when you install Node.js
+      </blockquote>
+      <h3>What is a Package?</h3>
+      <blockquote>
+        A package in Node.js contains all the files you need for a module.
+        Modules are JavaScript libraries you can include in your project.
+      </blockquote>
+    </div>
+    <div class="card">
+      <p class="heading">
+        Basic Usage |<a
+          href="https://itnext.io/javascript-interview-prep-primitive-vs-reference-types-62eef165bec8"
+          >🌎 itnext.io</a
+        >|<a
+          href="https://academind.com/learn/javascript/reference-vs-primitive-values/"
+          >Academind</a
+        >
+      </p>
+      <pre>
+<code class="dos">
+    Initialize a project
+    npm init
+    
+    #Install a dependency
+    $ npm install -g browserify # -g signifies instally globally
+    
+    
+    #It'll automatically update our package.json file if we have any.
+    
+    #Without -g it'll instally locally in the project folder under node_modules folder.
+    
+    #Installing dependencies using npm from package.json file
+    
+    $ npm install
+    
+    
+    #Running scripts from package.json
+    
+    $ npm &lt;script key name&gt;
+</code>
+</pre>
+    </div>
+    <div class="card">
+      <p class="heading">
+        Using a Package in Node.js|<a
+          href="http://ryanmorr.com/understanding-scope-and-context-in-javascript/#:~:text=Fundamentally%2C%20scope%20is%20function%2Dbased,owns%E2%80%9D%20the%20currently%20executing%20code."
+          >🌏 Read More</a
+        >
+      </p>
+      <pre>
+Once the package is installed, it is ready to use.
+
+Include the "upper-case" package the same way you
+include any other module:<hr><code class="node">
+var http = require('http');
+var uc = require('upper-case');
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(uc.upperCase("Hello World!"));
+    res.end();
+}).listen(8080);</code>
+  </pre>
+    </div>
+    <script src="../../js/script.js" defer></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
+</html>

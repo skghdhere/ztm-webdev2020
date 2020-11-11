@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTTPJSONAJAX + Asynchronous Javascript</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/monokai.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <h1 class="nav">Zero To Mastery: WebDev Course 2020</h1>
+    <h2 class="topic">20. HTTPJSONAJAX + Asynchronous Javascript</h2>
+    <ul class="menu">
+      <li><a href="#http">HTTP</a></li>
+      <li><a href="#json">JSON</a></li>
+      <li><a href="#ajax">AJAX</a></li>
+      <li><a href="#promises">Promises</a></li>
+      <li><a href="#async">Async/Await</a></li>
+    </ul>
+    <!-- HTTP starts here -->
+    <div id="http">
+      <div class="head">
+        <h3>1. HTTP</h3>
+        <blockquote>
+          <p>With HTTP with send Requests and Receive Responses</p>
+          <p>Types of HTTP Requests :</p>
+          <ol>
+            <li>GET</li>
+            <li>POST</li>
+            <li>PUT</li>
+            <li>Delete</li>
+          </ol>
+          <p>Types of HTTP Responses :</p>
+          <p>
+            Servers responde to Requests with Status Message(aka Status Code) +
+            the context we sent the request for.
+          </p>
+          <p>
+            HTTP response status codes indicate whether a specific HTTP request
+            has been successfully completed. Responses are grouped in five
+            classes:
+          </p>
+          <ol>
+            <li>Informational responses (100–199)</li>
+            <li>Successful responses (200–299)</li>
+            <li>Redirects (300–399)</li>
+            <li>Client errors (400–499)</li>
+            <li>Server errors (500–599)</li>
+          </ol>
+
+          <a
+            href="https://www.w3schools.com/whatis/whatis_http.asp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            W3Schools : What is HTTP?</a
+          >
+        </blockquote>
+      </div>
+      <!-- HTTP Ends here -->
+    </div>
+    <!-- JSON starts here -->
+    <div id="json">
+      <div class="head">
+        <h3>2.What is a JSON?</h3>
+        <blockquote>
+          JSON : Javascript Object Notation JSON is a syntax for storing and
+          exchanging data. JSON is text, written with JavaScript Object
+          notation.
+        </blockquote>
+      </div>
+      <div class="card">
+        <p class="heading">JSON Example</p>
+        <pre>In JavaScript we hava JSON.parse() and JSON.stringify()
+When receiving data from a web server, the data is always a string.        
+Parse the data with JSON.parse(), and the data becomes a JavaScript object.<hr><code class="javascript">//IExample - Parsing JSON
+//Imagine we received this text from a web server:
+
+'{ "name":"John", "age":30, "city":"New York"}'
+//Use the JavaScript function JSON.parse() to convert text into a JavaScript object:
+
+var obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}'); 
+
+//When sending data to a web server, the data has to be a string.
+
+//Convert a JavaScript object into a string with JSON.stringify().
+
+//Stringify a JavaScript Object
+//Imagine we have this object in JavaScript:
+
+var obj = { name: "John", age: 30, city: "New York" };
+//Use the JavaScript function JSON.stringify() to convert it into a string.
+
+var myJSON = JSON.stringify(obj);
+//The result will be a string following the JSON notation.
+</code>
+</pre>
+      </div>
+    </div>
+    <!-- JSON ends here -->
+
+    <!-- AJAX starts here -->
+    <div id="ajax">
+      <div class="head">
+        <h3>4. AJAX</h3>
+        <blockquote>
+          What is AJAX? AJAX = Asynchronous JavaScript And XML. AJAX is not a
+          programming language. AJAX just uses a combination of: A browser
+          built-in XMLHttpRequest object (to request data from a web server)
+          JavaScript and HTML DOM (to display or use the data) AJAX is a
+          developer's dream, because you can: Read data from a web server -
+          after a web page has loaded Update a web page without reloading the
+          page Send data to a web server - in the background.
+          <ul class="links">
+            <li>
+              <a
+                href="https://www.w3schools.com/js/js_ajax_intro.asp"
+                target="_blank"
+                rel="noopener noreferrer"
+                >W3School: AJAX</a
+              >
+            </li>
+          </ul>
+        </blockquote>
+      </div>
+      <div class="card">
+        <p class="heading">
+          fetch() API|<a
+            href="https://developers.google.com/web/updates/2015/03/introduction-to-fetch"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Intro to fetch</a
+          >|
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+            target="_blank"
+            rel="noopener noreferrer"
+            >MDN Docs</a
+          >
+        </p>
+        <pre>
+  Earlier XMLHttpRequest() was used then Jquery
+  (getJSON()) was used but now browsers support
+
+  fetch() API<hr><code class="node">
+    fetch('/my/url').then(response =>{
+      console.log(response);
+  });
+  
+  /*fetch() allows you to make network requests
+   similar to XMLHttpRequest (XHR).
+   The main difference is that the Fetch API uses Promises, 
+   which enables a simpler and cleaner API,
+   avoiding callback hell and having to
+   remember the complex API of XMLHttpRequest.*/</code>
+  </pre>
+      </div>
+    </div>
+    <!-- AJAX ends here -->
+
+    <!-- Promises starts here -->
+    <div id="promises">
+      <div class="head">
+        <h3>5. Promises (ES6)</h3>
+        <blockquote>
+          <h4>What is a Promise?</h4>
+          A promise is an object that may produce a single value some time in
+          the future: either a resolved value, or a reason that it’s not
+          resolved (e.g., a network error occurred).<br />
+          A promise may be in one of 3 possible states:
+          <em>fulfilled, rejected, or pending</em>. Promise users can attach
+          callbacks to handle the fulfilled value or the reason for rejection.
+          <ul class="links">
+            <li>
+              <a
+                href="http://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261"
+                target="_blank"
+                rel="noopener noreferrer"
+                >medium</a
+              >|
+            </li>
+            <li>
+              <a
+                href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises"
+                target="_blank"
+                rel="noopener noreferrer"
+                >MDN Guide</a
+              >|
+            </li>
+            <li>
+              <a
+                href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+                target="_blank"
+                rel="noopener noreferrer"
+                >MDN Reference</a
+              >|
+            </li>
+            <li>
+              <a
+                href="http://www.w3schools.com/js/js_promise.asp"
+                target="_blank"
+                rel="noopener noreferrer"
+                >W3Schools</a
+              >
+            </li>
+          </ul>
+        </blockquote>
+      </div>
+      <div class="card">
+        <p class="heading">Promise Example 1</p>
+        <pre>       
+<code class="javascript">const promise = new Promise((resolve, reject) => {
+  if (true) {
+    resolve("Stuff Worked");
+  } else {
+    reject("Error, it broke");
+  }
+});
+
+promise.then((result) => console.log(result));
+
+// We can chain then() and also catch() errors
+
+promise
+  .then((result) => result + "💩")
+  .then((result2) => console.log(result2))
+  .catch(() => console.log("error!"));
+
+// Promise.all() <-- It waits till all promises are resolved.
+
+const promise2 = new Promise((resolve, reject) =>
+  setTimeout(resolve, 100, "HIII")
+);
+const promise3 = new Promise((resolve, reject) =>
+  setTimeout(resolve, 1000, "Pookie")
+);
+const promise4 = new Promise((resolve, reject) =>
+  setTimeout(resolve, 3000, "I am here!")
+);
+
+Promise.all([promise2, promise3, promise4]).then((values) =>
+  console.log(values)
+);
+</code>
+</pre>
+      </div>
+      <div class="card">
+        <p class="heading">Promise with fetch()</p>
+        <pre>       
+<code class="javascript">const urls = [
+  "https://jsonplaceholder.typicode.com/users",
+  "https://jsonplaceholder.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/albums",
+];
+
+Promise.all(urls.map(url=>{
+	return fetch(url).then(response => response.json())
+})).then(results =>{
+	console.log(results[0]);
+	console.log(results[1]);
+	console.log(results[2]);
+}).catch(()=> console.log('Error Occurred!'))
+
+// Returns and array of users , posts and albums
+</code>
+</pre>
+      </div>
+    </div>
+    <!-- Promises ends here -->
+
+    <!-- async starts here -->
+    <div id="async">
+      <div class="head">
+        <h3>7.Async Await(ES8)</h3>
+        <blockquote>
+          <p>
+            Async/Await is the extension of promises which we get as a support
+            in the language. An async function is a function declared with the
+            async keyword.
+          </p>
+          <p>
+            The async and await keywords enable asynchronous, promise-based
+            behavior to be written in a cleaner style, avoiding the need to
+            explicitly configure promise chains.
+          </p>
+          <p>
+            Use of async / await enables the use of ordinary try / catch blocks
+            around asynchronous code. The await keyword is only valid inside
+            async functions. If you use it outside of an async function's body,
+            you will get a SyntaxError.
+          </p>
+          The purpose of async/await is to simplify the syntax necessary to
+          consume promise-based APIs. The behavior of async/await is similar to
+          combining generators and promises.
+          <ul class="links">
+            <li>
+              <a
+                href="https://www.w3schools.com/js/js_async.asp"
+                target="_blank"
+                rel="noopener noreferrer"
+                >W3Schools</a
+              >|
+            </li>
+            <li>
+              <a
+                href="https://javascript.info/async-await"
+                target="_blank"
+                rel="noopener noreferrer"
+                >JavaScript.info</a
+              >|
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
+                target="_blank"
+                rel="noopener noreferrer"
+                >MDN Docs</a
+              >|
+            </li>
+            <li>
+              <a
+                href="https://medium.com/javascript-in-plain-english/async-await-javascript-5038668ec6eb"
+                target="_blank"
+                rel="noopener noreferrer"
+                >medium</a
+              >|
+            </li>
+          </ul>
+        </blockquote>
+      </div>
+      <div class="card">
+        <p class="heading">Async Demo</p>
+        <pre><code class="javascript">
+function resolveAfter2Seconds() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('resolved');
+    }, 2000);
+  });
+}
+
+async function asyncCall() {
+  console.log('calling');
+  const result = await resolveAfter2Seconds();
+  console.log(result);
+  // expected output: "resolved"
+}
+
+asyncCall();
+      </code></pre>
+      </div>
+      <div class="card">
+        <p class="heading">Async vs Promises</p>
+        <pre><code class="javascript">
+// With Promises
+movePlayer(100, 'Left')
+        .then(()=> movePlayer(400, 'Left'))
+        .then(()=> movePlayer(10, 'Right'))
+        .then(()=> movePlayer(350, 'Left'))
+// With Async Await
+async function playerStart(){
+  const firstMove = await movePlayer(100, 'Left');
+  await movePlayer(400, 'Left');
+  await movePlayer(10, 'Right');
+  await movePlayer(350, 'Left');
+}</code>
+</pre>
+      </div>
+    </div>
+    <!-- async ends here -->
+    <!-- Go to Top Button  -->
+    <a id="button"></a>
+    <script src="../../js/script.js" defer></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
+</html>
