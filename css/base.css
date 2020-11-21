@@ -36,10 +36,15 @@
 .topic-card:hover {
   transform: scale(1.1);
   /* box-shadow: 5px #fff; */
-  box-shadow: 0 10px 28px rgba(226, 14, 60, 0.538), 0 10px 10px  rgb(0, 0, 0);
+  box-shadow: 0 10px 28px rgba(226, 14, 60, 0.538), 0 10px 10px rgb(0, 0, 0);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
+.project {
+  background: linear-gradient(to right, #613bea, rgb(101, 15, 171));
+}
+.project:hover {
+  box-shadow: 0 10px 28px rgba(101, 15, 171, 0.593), 0 10px 10px rgb(0, 0, 0);
+}
 /* @media only screen and (max-width: 600px) {
   .container {
     flex-direction: column;
